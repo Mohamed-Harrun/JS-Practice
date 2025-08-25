@@ -190,8 +190,25 @@ mainValue.textContent = value-1;
 // ## 7. **Asynchronous JS**
 
 // * Use `setTimeout` to print `"Loading..."` after 3 seconds.
+setTimeout(()=>{
+    console.log("Loading...");
+},3000)
 // * Use `setInterval` to print numbers 1–10 every second.
+function intervel (){
+    setInterval(()=>{
+for(i=1;i<=10;i++){
+    console.log(i)
+}
+},1000)
+}
+// intervel();
 // * Create a **fake promise** that resolves after 2 seconds.
+const promise = new Promise((resolve, reject)=>{
+    resolve: console.log("Resolved")
+    reject: console.log("Rejected")
+})
+
+promise.resolve
 // * Fetch data from a public API (like `https://jsonplaceholder.typicode.com/posts`) and display titles.
 async function fetchs (){
     const res = await fetch('https://jsonplaceholder.typicode.com/posts')
