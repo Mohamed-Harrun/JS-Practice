@@ -202,13 +202,6 @@ for(i=1;i<=10;i++){
 },1000)
 }
 // intervel();
-// * Create a **fake promise** that resolves after 2 seconds.
-const promise = new Promise((resolve, reject)=>{
-    resolve: console.log("Resolved")
-    reject: console.log("Rejected")
-})
-
-promise.resolve
 // * Fetch data from a public API (like `https://jsonplaceholder.typicode.com/posts`) and display titles.
 async function fetchs (){
     const res = await fetch('https://jsonplaceholder.typicode.com/posts')
@@ -217,93 +210,18 @@ async function fetchs (){
 }
 fetchs();
 
-// ---
-
-// ## 8. **Advanced JS Concepts**
-
-// * Write a closure that remembers a number and adds to it each call.
-// * Demonstrate hoisting with `var` and `let`.
-// * Create a class `Student` with properties and a method `getDetails()`.
-// * Extend a class `Person` into `Employee`.
-
-// ---
-
-// ## 9. **Data Structures**
-
-// * Use `Map` to store student marks.
-// * Use `Set` to remove duplicates from an array.
-// * Implement a **stack** with push/pop in JS.
-// * Implement a **queue** with enqueue/dequeue.
-
-// ---
-
-// ## 10. **Error Handling**
-
-// * Write code that throws an error if age < 18.
-// * Use `try...catch` to handle division by zero.
-// * Create a custom error `"Invalid Input"`.
-
-// ---
-
-// ## 11. **Advanced ES Features**
-
-// * Create a generator function that yields numbers 1–5.
-// * Use a `Symbol` as a unique object key.
-// * Create a Proxy that logs whenever a property is accessed.
-
-// ---
-
-// ## 12. **JSON & APIs**
+// ##  **JSON & APIs**
 
 // * Convert a JS object to JSON (`JSON.stringify`).
+const obj = {
+    name: 'Harrun',
+    age: 22,
+    isDeveloper: true
+};
+const json = JSON.stringify(obj);
+console.log(json);
 // * Parse a JSON string to JS object (`JSON.parse`).
-// * Fetch user data from API and display in list.
-
+const JSO = JSON.parse(json);
+console.log(JSO);   
 // ---
 
-// ## 13. **Web APIs**
-
-// * Save user’s name in **localStorage** and retrieve it.
-// * Create a click counter using **sessionStorage**.
-// * Use Geolocation API to get user’s location.
-// * Copy text to clipboard with JS.
-
-// ---
-
-// ## 14. **Patterns**
-
-// * Implement a **module pattern** using IIFE.
-// * Create a singleton object (only one instance allowed).
-// * Build a simple observer pattern (subscribe/notify).
-
-// ---
-
-// ## 15. **Testing & Tooling**
-
-// * Write unit tests for a function that adds two numbers (using Jest or similar).
-// * Setup ESLint in a project and fix warnings.
-// * Transpile ES6 code to ES5 using Babel.
-
-// ---
-
-// ## 16. **Performance & Best Practices**
-
-// * Implement a **debounce** function for a search bar.
-// * Implement a **throttle** function for scroll events.
-// * Optimize a loop that runs 1M times (compare `for` vs `map`).
-// * Practice event delegation on multiple buttons.
-
-// ---
-
-// ## 17. **Interview-Level Challenges**
-
-// * Implement your own `map()` as a polyfill.
-// * Implement your own `bind()` as a polyfill.
-// * Use `Promise.all` to run multiple promises together.
-// * Write a function to flatten a nested array `[1, [2, [3, 4]]] → [1, 2, 3, 4]`.
-
-// ---
-
-// 👉 By completing these tasks section by section, you’ll **cover the entire roadmap from beginner to pro**.
-
-// Do you want me to **make this into a 30-day daily task plan** (like Day 1: Basics, Day 2: Control Flow…), so you can follow it step by step?
