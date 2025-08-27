@@ -263,3 +263,22 @@ for(i=0; i<full1.length-1;i++){
 console.log(full1)
 console.log("The Duplicate value",duplicate)
 
+//  async await
+async function wait (){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            reject("The Promise Error")
+        },2000)
+    })
+}
+async function  getData(){
+try {
+    console.log("Waiting for the result");
+    const response = await wait();
+    console.log(response);
+} catch (error) {
+    console.log("Error", error);
+}
+}
+
+getData();
