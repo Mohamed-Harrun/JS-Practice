@@ -177,17 +177,8 @@ mainValue.textContent = value-1;
 })
 // ---
 
-// ## 6. **ES6+ Features**
 
-// * Use template literals to print:
-//   `"Hello, my name is X and I am Y years old."`
-// * Create two JS files with modules (`import` & `export`).
-// * Write an IIFE that runs automatically.
-// * Use optional chaining to safely access `user.address.city`.
-
-// ---
-
-// ## 7. **Asynchronous JS**
+// ## . **Asynchronous JS**
 
 // * Use `setTimeout` to print `"Loading..."` after 3 seconds.
 setTimeout(()=>{
@@ -224,4 +215,51 @@ console.log(json);
 const JSO = JSON.parse(json);
 console.log(JSO);   
 // ---
+
+let promise = new Promise((resolve, reject)=>{
+    let success = true;
+    if(success){
+        resolve("Promise is success")
+    }
+    else{
+        reject("Promise is failed")
+    }
+})
+
+promise.
+then((r)=> console.log("The promise is resolved:", r)).
+catch((err)=>console.log("Error:",err))
+
+
+//  rotate an Array. 
+
+const rtArr = [1,2,3,4,5];
+let final = [];
+for (i=1;i<rtArr.length;i++){
+    final.push(rtArr[i]);
+}
+final.push(rtArr[0])
+    console.log("Final",final);
+
+const arr1  = [1,2,3,4];
+const arr2  = [5,3,6,7,8];
+
+const full = [...arr1, ...arr2];
+const full1 = full.sort((a,b)=>a-b);
+let duplicate = []
+for(i=0; i<full1.length-1;i++){
+    let test = full1[i]
+    console.log("Value",test)
+    for(j=i+1;j<full1.length;j++){
+        let test2 = full1[j];
+        if(test===test2){
+            duplicate.push(test);
+        }
+        else{
+            console.log("no duplicate")
+        }
+    }
+}
+console.log(full1)
+console.log("The Duplicate value",duplicate)
 
