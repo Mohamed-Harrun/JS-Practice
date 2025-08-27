@@ -1,5 +1,5 @@
 // Perfect — you want **tasks/exercises mapped to this syllabus** so you can practice after each stage.
-// I’ll create **practical tasks from beginner → pro**, following the same 17 sections.
+// I’ll create **practical tasks from beginner → pro**, following the same sections.
 
 // ---
 
