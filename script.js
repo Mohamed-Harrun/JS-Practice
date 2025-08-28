@@ -193,13 +193,7 @@ for(i=1;i<=10;i++){
 },1000)
 }
 // intervel();
-// * Fetch data from a public API (like `https://jsonplaceholder.typicode.com/posts`) and display titles.
-async function fetchs (){
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-    const response = await res.json();
-    console.log(response)
-}
-fetchs();
+
 
 // ##  **JSON & APIs**
 
@@ -282,3 +276,26 @@ try {
 }
 
 getData();
+
+// function fetchTodos () {
+//     fetch("https://jsonplaceholder.typicode.com/todos")
+//     .then((res)=>res.json())
+//     .then((data)=> console.log(data))
+//     .catch((error)=>console.log("Error:",error));
+// }
+
+// fetchTodos();
+
+async function fetching (){
+    try {
+        const res = await fetch("https://jsonplaceholder.typicode.com/todos")
+        const data = await res.json();
+        console.log("Data:",data);
+    } catch (error) {
+        console.log("Error",error)
+    }
+}
+
+fetching();
+
+//  successfully complted the JavaScript Practice.
