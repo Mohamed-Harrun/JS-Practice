@@ -299,3 +299,198 @@ async function fetching (){
 fetching();
 
 //  successfully complted the JavaScript Practice.
+
+//  pattern 
+// 1 3 4 10
+// 2 5 9 11
+// 6 8 12 15
+// 7 13 14 16
+
+//  one row four numbers 
+// total 4 rows and 4 columns
+// first up to down then down to up
+
+function newMission (){
+    for(i=1;i<=16;i++){
+        console.log(i);
+    }
+}
+newMission();
+for (let i=1; i<=5; i++){
+    let row ='';
+    for(let j=1; j<=i; j++){
+        row += '*';
+    }
+    console.log(row);
+}
+
+for (let i=1;i<=3;i++){
+    for(let j=1; j<=4;j++){
+        console.log(`i${i} j${j} `);
+    }
+}
+
+for(let i=0;i<=3;i++){
+    let row = '';
+    for(let j=1; j<=i; j++){
+        row += '*';
+    }
+    console.log(row)
+}
+//  Declaring a 2d array.
+
+const grids = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+
+console.log(grids[1][0]);
+
+
+const rows = 5;
+const cols = 4;
+const grid = [];
+for (let i = 0; i < rows; i++) {
+    grid[i] = [i];
+  for (let j = 0; j < cols; j++) {
+    grid[i][j] = j;
+  }
+}
+console.log(grid);
+
+
+
+/* 10 numbers last four namber take add and print */
+
+
+// const numbersss = prompt("Enter your number:");
+// const lastFour = numbersss.slice(-4); 
+// let sumss = 0;
+
+// for (let i = 0; i < lastFour.length; i++) {
+//   sumss += Number(lastFour[i]); 
+// }
+
+// console.log("Sum of last 4 digits:", sumss);
+
+
+
+const two = () => {
+  let arrs = [1,1,2,4,3,4,5,6];
+  let target = 6;
+
+  for (let i = 0; i < arrs.length - 1; i++) {
+    if (arrs[i] !== arrs[i+1]) {
+      if (arrs[i] + arrs[i+1] === target) {
+        console.log(arrs[i], arrs[i+1]);
+      } else {
+        console.log(`the number ${arrs[i]} and ${arrs[i+1]} is not a pair`);
+      }
+    } else {
+      console.log(`the number ${arrs[i]} and ${arrs[i+1]} is not a pair`);
+    }
+  }
+}
+two();
+
+/* take nested for loop in this loop outer loop is hour hand and inner loop is minute hand 
+which means the hour takes one step forward and the inner loop will take 60 steps to make outer loop run one time */
+
+const nest = ()=>{
+    let arrs = [1,1,2,4,3,4,5,6];
+    let target = 6;
+    let sum=0;
+    console.log(arrs.length);
+ for(let i=0; i<arrs.length-1; i++){
+    console.log(i);
+    for(let j=1; j<arrs.length; j++){
+        console.log(`the first value is ${arrs[i]} and second value is ${arrs[j]}`)
+        if(arrs[i]!==arrs[j]){
+            sum = arrs[i]+arrs[j];
+            if(sum===target){
+                console.log(`the number ${arrs[i]} and ${arrs[j]} are valid pair`);
+            }else{
+                console.log(`the number ${arrs[i]} and ${arrs[j]} are not valid pair`);
+            }
+            sum=0;
+        }
+        else{
+            console.log(`the number ${arrs[i]} and ${arrs[j]} are not valid`);
+        }
+    }
+ }   
+}
+nest();
+
+/*  inga paaru first index aa edukkum  aprm atha matra index kuda compare pannum 
+ippa ithula enna pannanum na first rendu num compare same aa iruntha 
+number ra pottu not valid nu kattu
+apdi illana add pannu target kuda compare pannu equal la iruntha 
+equal nu solli print pannu
+*/
+
+
+//  find second largest number in an array without using inbuilt methods
+
+
+const secondLargestt = ()=>{
+    let array =[1,30,2,3,45,4,5,6,7,8,9,25];
+    let first = 0;
+    let second = 0;
+    console.log(array.length-1);
+    for(let i=0; i<array.length-1; i++){
+        console.log(i);
+        for(let j=1; j<array.length; j++){
+            if(array[i]>array[j]){
+                first=array[i];
+            }
+            else{
+                second=array[j];
+            }
+        }
+    }
+    console.log(first);
+}
+
+// first oru program irukku na logic aa think panni eutha kathukko ithiini naalum athan panna inimey inum naraya pannanum
+// appo than intha program la irukkra mathiri varathu
+
+const secondLargest = ()=>{
+const array = [1,2,3,4,18,26,58,57];
+let first = -Infinity
+let second = -Infinity
+for(let num of array){
+    if( num>first){
+        second = first;
+        first = num;
+    }
+    else if(num<first && num>second){
+        second=num;
+    }
+}
+console.log(second);
+}
+
+secondLargest();
+/* 
+Write a Program to check given year is Leap Year or not without using modulus (%) 
+operator. 
+Example: 
+Input: 2024 
+Output: It is a Leap Year */
+
+// leap year means divisible by4 & by 400 
+// and not by 100
+const isDivisible = (year, divisor)=>{
+    return Math.floor(year/divisor)*divisor === year;
+}
+const leapYear = (inp)=>{
+    if((isDivisible(inp,4) && !isDivisible(inp,100)) || isDivisible(inp,400)){
+        console.log(`the given year:${inp} is a leap year`);
+    }
+    else{
+        console.log(`the given year:${inp} is not a leap year`);
+    }
+}
+leapYear(2024);
