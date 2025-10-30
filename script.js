@@ -494,3 +494,176 @@ const leapYear = (inp)=>{
     }
 }
 leapYear(2024);
+
+/* How can you determine whether a number is even or odd without using the 
+modulus operator (%). */
+
+const findOddEven = (num)=>{
+    if(Math.floor(num/2)*2===num){
+        console.log(`The given number is an even number: ${num}`)
+    }
+    else{
+        console.log(`The given number is an odd number: ${num}`)
+    }
+}
+findOddEven(2);
+
+
+/* Write a program to print numbers from 1 to 100 without using loops. */
+// can use recursive function
+
+const printNum = (num)=>{
+    
+    if(num<=100){
+        console.log(num);
+    }
+    return printNum(num+1);
+}
+// console.log(printNum(1));
+
+
+/* How to print “Hello World!” without using the print statement. 
+Example1: 
+Input: “Hello World!” 
+Output: Hello World!  */
+
+const print = (word)=>{
+alert(word);
+}
+// print("Hello World!")
+
+/* Prime Number Program. 
+Example: Input:5 
+Output: It is prime Number 
+Example2: Input:4 
+Output: It Not a prime Number */
+
+//  prime numbers 2, 3, 5, 7, 11
+
+const prime = (num)=>{
+    // to check greater than 1.
+    // dvisible by other numbers.
+    if(num<2){
+        return console.log("The number is not a prime number");
+    }
+    for(let i=2; i<=Math.sqrt(num); i++ ){
+        if(num%i === 0){
+            console.log("It's not a prime number")
+        }
+        else{
+            console.log("It's a prime number")
+        }
+    }
+}
+prime(4)
+
+/* 
+Factorial number Program. 
+Example: Input:5 
+Output: 120 
+Example2: Input:4 
+Output:24 
+*/
+
+const factorials  = (num)=>{
+// 5*4*3*2*1
+// n*(n-1)*(n-2)*...(n-4);
+// 5*4*3*2*1;
+let result = 1;
+for(let i=1; i<=num; i++){
+    result *= i;
+}
+console.log(result);
+}
+factorials(3);
+
+/* 
+Write a program that finds the length of a string without using the len() function. 
+Example1: 
+Input: “Program” 
+Output: 7 
+Example2: 
+Input: “Number” 
+Output: 6
+*/
+
+const findlength = (str)=>{
+    // length kandupudikanum 
+    // for loop use pannu 
+    let length = 0;
+    for(let char of str){
+        length++
+    }
+    console.log(length)
+}
+findlength("Harrun");
+
+
+// get 10 numbers from the users and find the missing numbers
+// na oru 2 number vangitten
+// atha array la store panren
+// athukku aprm enta irukura array la compare panni 
+// enna numbers miss acho atha print pannu
+const findMissingNumber = () => {
+    const userInput = prompt("Enter your numbers (comma separated):"); 
+    const stored = userInput.split(",").map(Number);  //no built in
+    
+    const myValue = [1,2,3,4,5,6,7,8,9,10];
+
+    let notSame = myValue
+      .filter(x => !stored.includes(x)) 
+
+    console.log("Not same:", notSame); 
+    console.log("User entered:", stored);
+    console.log("Expected:", myValue);
+}
+// findMissingNumber();
+/* 
+add two numbers without using +
+*/
+
+const addition = (a,b)=>{
+    while(b!==0){
+        // b holds the carry
+        let carry = a & b;
+        a=a ^ b;
+        b= carry << 1;
+    }
+    return a;
+}
+console.log(addition(44,35));
+
+/* Find the second largest number in a list without sorting. 
+Example1: 
+Input: 10, 15, 20, 5, 8 
+Output: 15 
+Example2: 
+Input: 2, 5, 18, 6, 13 
+Output: 13 */
+
+const largest = ()=>{
+    let arr = [1,2,3,4,5];
+    // oru numbera edukanum atha ella number kudaium compare pannanum
+    let first = 0;
+    let second = 0;
+    let temp = 0;
+
+}
+
+
+/*  How to reverse a string without using built-in string reversal functions. 
+Example1: 
+Input: “string” 
+Output: “gnirts 
+Example2: 
+Input: “name” 
+Output: “eman” */
+
+const reversse = (str)=>{
+    let final='';
+    for(let i=str.length-1; i>=0;i--){
+        final += str[i];
+    }
+    console.log(final);
+}
+reversse("Reverse");
